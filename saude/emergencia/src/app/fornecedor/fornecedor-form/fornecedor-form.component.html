@@ -1,0 +1,81 @@
+<h1 class="mt-4">Fornecedor</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">{{ fornecedor.idFornecedor ? 'Edição':'Cadastro' }}</li>
+</ol>
+
+<div class="container">
+  <form [formGroup]="fornecedorForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Id: *</label>
+          <input type="text" class="form-control"
+                 formControlName="idFornecedor"
+                 id="idFornecedor"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>CPF/CNPJ: *</label>
+          <input type="text" class="form-control"
+                 formControlName="cpfCnpj"
+                 id="cpfCnpj"/>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group">
+          <label>Nome: *</label>
+          <input  type="text"  class="form-control"
+                 formControlName="nome"
+                 id="nome"
+                 style="text-transform: uppercase"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+       <div class="col-md-6">
+          <div class="form-group">
+            <label>Estado: *</label>
+            <input type="text"
+                  formControlName="idEstado"
+                    id="idEstado"
+                    class="form-control"/>
+          </div>
+       </div>
+       <div class="col-md-6">
+          <div class="form-group">
+            <label for="idEstado" class="control-label" >Estado2: *</label>
+            <br>
+            <select class="form-control" id="idEstado" formControlName="idEstado" >
+                <option *ngFor="let estadolocal of lstEstadoAll" [value]="estadolocal.idEstado" >
+                    {{ estadolocal.nome }}
+                </option>
+            </select>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-success" type="submit" *ngIf="!fornecedor.idFornecedor">
+          <i class="fa fa-save"></i>
+          Salvar
+        </button>
+
+        <button class="btn btn-primary" type="submit" *ngIf="fornecedor.idFornecedor">
+          <i class="fa fa-save"></i>
+          Atualizar
+        </button>
+
+        <button type="button" class="btn btn-danger ml-1" (click)="voltarLista()">
+          <i class="fa fa-arrow-alt-circle-right"></i>
+          Voltar
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>
+

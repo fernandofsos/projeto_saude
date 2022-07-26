@@ -1,0 +1,61 @@
+<h1 class="mt-4">Fornecedor</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+
+<div class="row">
+  <div class="col-md-4">
+    <!-- <button type="button" class="btn btn-warning" (click)="novoCadastro()">
+      <i class="fa fa-plus"></i>
+      Novo
+    </button> -->
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-hover">
+      <thead>
+         <th>cpf/cnpj</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>Ação</th>
+      </thead>
+       <tbody>
+        <tr *ngFor="let fornecedor of lstFornecedor">
+            <td>{{ fornecedor.cpfCnpj }}</td>
+            <td>{{ fornecedor.nome }}</td>
+            <td>{{ fornecedor.celular }}</td>
+            <td>{{ fornecedor.endereco }} {{ fornecedor.numero}} {{ fornecedor.complemento }}</td>
+            <td>
+               <button class="btn btn-primary"
+                       data-bs-toggle="tooltip"
+                       title="Edita o Registro"
+                       routerLink="/fornecedor/form/{{ fornecedor.idFornecedor }}">
+                  <i class="fa fa-edit"></i>
+              </button>
+             <button class="btn btn-danger"
+                     (click)="preparaDesativacao(fornecedor)"
+                     data-bs-toggle="tooltip"
+                     title="Desativa o Registro">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button class="btn btn-primary"
+                      data-bs-toggle="tooltip"
+                      title="Detalhe do Registro">
+                <i class="fa fa-info fa-lg" aria-hidden="true"></i>
+              </button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <ngb-pagination
+          [collectionSize]="70"
+          [(page)]="page"
+          [boundaryLinks]="true" (pageChange)="loadPage($event)" >
+    </ngb-pagination>
+  </div>
+</div>
+
+

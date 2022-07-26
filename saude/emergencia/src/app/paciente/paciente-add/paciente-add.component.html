@@ -1,0 +1,142 @@
+<h1 class="mt-4">Paciente</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">
+    {{ paciente.idPaciente ? "Edição" : "Cadastro" }}
+  </li>
+</ol>
+
+<div class="container">
+  <form [formGroup]="pacienteForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>PRONTUÁRIO</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="prontuario"
+                 id="prontuario"
+          />
+        </div>
+      </div>
+         <div class="col-md-3">
+        <div class="form-group">
+          <label>CPF</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="cpf"
+                 id="cpf"
+          />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>CNS</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="cns"
+                 id="cns"
+          />
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>DATA NASCIMENTO</label>
+          <input type="text"
+                 class="form-control"
+                 formControlName="dataNascimento"
+                 id="dataNascimento"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>NOME</label>
+          <input type="text" class="form-control"
+                 formControlName="nome"
+                 id="nome"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>NOME SOCIAL</label>
+          <input type="text"  class="form-control"
+                 formControlName="nomeSocial"
+                 id="nomeSocial"
+                 style="text-transform: uppercase"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="text" class="form-control"
+                 formControlName="email"
+                 id="email"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>NOME MÃE</label>
+          <input type="text"  class="form-control"
+                 formControlName="mae"
+                 id="mae"
+                 style="text-transform: uppercase"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label for="idSexo" class="control-label" >SEXO</label>
+          <br>
+          <select class="form-control">
+            <option selected>Selecione</option>
+            <option value="1">CPF</option>
+            <option value="2">Nome</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>TELEFONE</label>
+          <input type="text"  class="form-control"
+                 formControlName="telefone"
+                 id="telefone"
+                 style="text-transform: uppercase"/>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>CELULAR</label>
+          <input type="text"  class="form-control"
+                 formControlName="celular"
+                 id="celular"
+                 style="text-transform: uppercase"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-success" type="submit" *ngIf="paciente.idPaciente == undefined || paciente.idPaciente == 0 ">
+          <i class="fa fa-save"></i>
+          Salvar
+        </button>
+        <button class="btn btn-success" type="submit" *ngIf="paciente.idPaciente  !== undefined || paciente.idPaciente == 0 ">
+          <i class="fa fa-save"></i>
+          Alterar
+        </button>
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-save"></i>
+          Atender
+        </button>
+        <button type="button" class="btn btn-danger ml-1" (click)="voltarLista()">
+          <i class="fa fa-arrow-alt-circle-right"></i>
+          Voltar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

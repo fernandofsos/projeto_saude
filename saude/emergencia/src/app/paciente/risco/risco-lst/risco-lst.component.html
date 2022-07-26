@@ -1,0 +1,48 @@
+<h1 class="mt-2">Classificação de Risco</h1>
+<br />
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-hover">
+      <thead>
+        <th>ID</th>
+        <th>cpf</th>
+        <th>Nome</th>
+        <th>Nacimento</th>
+        <th>Ação</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paciente of pacientes">
+          <td>{{ paciente.idCliente }}</td>
+          <td>{{ paciente.nome }}</td>
+          <td>{{ paciente.dataNascimento }}</td>
+          <td>{{ cliente.cpf | cpf }}</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              title="Edita o Registro"
+              routerLink="/clientes/form/{{ paciente.idPaciente }}"
+            >
+              <i class="fa fa-edit"></i>
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="preparaDesativacao(paciente)"
+              data-bs-toggle="tooltip"
+              title="Desativa o Registro"
+            >
+              <i class="fa fa-trash"></i>
+            </button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              title="Detalhe do Registro"
+            >
+              <i class="fa fa-info fa-lg" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

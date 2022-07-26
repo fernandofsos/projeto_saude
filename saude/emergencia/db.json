@@ -1,0 +1,82 @@
+{
+  "cliente": [
+    {
+      "id": 1,
+      "nome": "FERNANDO SERGIO",
+      "cpf": "55531440359",
+      "dataCadastro": "01/01/2021 08:50:00"
+    },
+    {
+      "nome": "MARIA FERNANDA",
+      "cpf": "55531440359",
+      "dataCadastro": "01/01/2021 08:50:00",
+      "id": 2
+    },
+    {
+      "nome": "MARIA FERNANDA",
+      "cpf": "55531440359",
+      "dataCadastro": "01/01/2021 08:50:00",
+      "id": 3
+    },
+    {
+      "nome": "JOAO GABRIEL FEITOSA OLIVEIRA",
+      "cpf": "55531440359",
+      "dataCadastro": "01/01/2021 08:50:00",
+      "id": 4
+    },
+    {
+      "cpf": "555555555547",
+      "nome": "VANIA ANGELICA FEITOSA VIANA",
+      "dataCadastro": "02/07/1974",
+      "id": 5
+    },
+    {
+      "cpf": "555555555547",
+      "nome": "REGINA FRANCES OLIVEIRA DE SOUSA",
+      "dataCadastro": "02/07/1974",
+      "id": 6
+    },
+    {
+      "cpf": "888888888",
+      "nome": "JOAO BATISTA DE SOUSA NETO",
+      "dataCadastro": "02/07/1974",
+      "id": 7
+    },
+    {
+      "cpf": "55555555555",
+      "nome": "MARIA DULCE OLVEIRA DE SOUSA",
+      "dataCadastro": "02/07/1974",
+      "id": 8
+    }
+  ],
+  "servicoPrestado": [
+    {
+      "id": 1,
+      "descricao": "sistemas de informatica",
+      "idCliente": 1,
+      "valor": 100,
+      "dataCadastro": "02/07/2021"
+    },
+    {
+      "idCliente": 1,
+      "descricao": "dddddd",
+      "dataCadastro": "01/01/2020",
+      "valor": "120.00",
+      "id": 2
+    },
+    {
+      "idCliente": 2,
+      "descricao": "TESTE DO CADASTRO DE SERVIÇO",
+      "dataCadastro": "01/01/2008",
+      "valor": "155.55",
+      "id": 3
+    },
+    {
+      "idCliente": 4,
+      "descricao": "FORMATAÇÃO DO PC",
+      "dataCadastro": "01/01/2020",
+      "valor": "160.80",
+      "id": 4
+    }
+  ]
+}

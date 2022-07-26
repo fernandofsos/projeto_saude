@@ -1,0 +1,35 @@
+GET http://localhost:3004/cliente
+content-type: application/json
+
+###
+GET http://localhost:3004/cliente/1
+content-type: application/json
+
+###
+POST  http://localhost:3004/cliente HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "JOAO BATISTA DE SOUSA NETO",
+    "cpf": "55531440359",
+    "dataCadastro": "01/01/2021 08:50:00"
+}
+
+###
+PUT  http://localhost:3004/cliente/2 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "JOAO GABRIEL",
+    "cpf": "55531440359",
+    "dataCadastro": "01/01/2021 08:50:00"
+}
+
+###
+DELETE http://localhost:3004/cliente/3
+Content-Type: application/json
+
+
+###
+GET http://localhost:3004/servicoPrestado?descricao=dddddd&mes=02
+Content-Type: application/json

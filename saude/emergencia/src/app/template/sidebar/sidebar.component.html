@@ -1,0 +1,223 @@
+<div id="layoutSidenav_nav">
+  <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <div class="sb-sidenav-menu">
+      <div class="nav">
+        <!-- <div class="sb-sidenav-menu-heading">Produtos</div> -->
+        <a class="nav-link" routerLink="/home">
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          Home
+        </a>
+        <!-- <div class="sb-sidenav-menu-heading">Cadastro</div> -->
+        <!-- INICIO PACIENTE MENU -->
+        <a
+          class="nav-link collapsed"
+          data-toggle="collapse"
+          data-target="#pacienteLayouts"
+          aria-expanded="false"
+          aria-controls="pacienteLayouts"
+        >
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          Paciente
+          <div class="sb-sidenav-collapse-arrow">
+            <i class="fas fa-angle-down"> </i>
+          </div>
+        </a>
+        <div
+          class="collapse"
+          id="pacienteLayouts"
+          aria-labelledby="headingOne"
+          data-parent="#sidenavAccordion"
+        >
+          <nav class="sb-sidenav-menu-nested nav">
+            <a class="nav-link" routerLink="/pacientes/paciente-lst"
+              >Admissão</a
+            >
+            <a class="nav-link" routerLink="/risco/risco-lst"
+              >Classificação Risco</a
+            >
+            <a class="nav-link" routerLink="/pacientes/paciente-lst"
+              >Atendimento Médico</a
+            >
+            <a class="nav-link" routerLink="/pacientes/paciente-lst"
+              >Serviço Social</a
+            >
+          </nav>
+        </div>
+        <!--FIM PACIENTE MENU-->
+
+        <!--INICIO GRUPOS MENU-->
+        <a class="nav-link collapsed" href="#" data-toggle="collapse"
+          data-target="#collapsePagesGrupo" aria-expanded="false"
+          aria-controls="collapsePages">
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          Movimentação
+          <div class="sb-sidenav-collapse-arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </a>
+        <div class="collapse" id="collapsePagesGrupo" aria-labelledby="headingOne"
+             data-parent="#sidenavAccordion">
+          <nav class="sb-sidenav-menu-nested nav">
+            <a class="nav-link" routerLink="/risco/risco-lst">Recepção</a>
+            <a class="nav-link" routerLink="/risco/risco-lst">Clinicas</a>
+          </nav>
+        </div>
+        <!--FIM GRUPOS MENU-->
+
+        <!--INICIO FORNECEDORES MENU-->
+        <a class="nav-link collapsed" href="#" data-toggle="collapse"
+          data-target="#collapsePagesFornecedor" aria-expanded="false"
+          aria-controls="collapsePages" >
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-laptop-medical"></i>
+          </div>
+          Exames
+          <div class="sb-sidenav-collapse-arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </a>
+        <div class="collapse" id="collapsePagesFornecedor" aria-labelledby="headingOne"
+          data-parent="#sidenavAccordion" >
+          <nav class="sb-sidenav-menu-nested nav">
+            <a class="nav-link" routerLink="/fornecedor">Laboratorial</a>
+            <a class="nav-link" routerLink="/fornecedor/form">Imagem</a>
+          </nav>
+        </div>
+        <!--FIM FORNECEDORES MENU-->
+        <!-- <div class="sb-sidenav-menu-heading">Cadastro</div> -->
+        <!-- INICIO CLIENTES MENU -->
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseLayouts"
+          aria-expanded="false" aria-controls="collapseLayouts" >
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-columns"></i>
+          </div>
+          Administrativo
+          <div class="sb-sidenav-collapse-arrow">
+            <i class="fas fa-angle-down"> </i>
+          </div>
+        </a>
+        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+          data-parent="#sidenavAccordion">
+          <nav class="sb-sidenav-menu-nested nav">
+            <a class="nav-link" routerLink="/clientes">Cad. Clinica/</a>
+            <a class="nav-link" routerLink="/clientes/form">Cad. Enfermaria</a>
+            <a class="nav-link" routerLink="/clientes/form">Cad. Leito</a>
+          </nav>
+        </div>
+        <!--FIM CLIENTES MENU-->
+
+        <!--INICIO PRODUTOS MENU-->
+        <a class="nav-link collapsed" href="#" data-toggle="collapse"
+           data-target="#collapsePagesProduto" aria-expanded="false"
+           aria-controls="collapsePages" >
+          <div class="sb-nav-link-icon">
+            <i class="fas fa-print"></i>
+          </div>
+          Relatórios/Consultas
+          <div class="sb-sidenav-collapse-arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </a>
+        <div class="collapse" id="collapsePagesProduto" aria-labelledby="headingOne"
+          data-parent="#sidenavAccordion">
+          <nav class="sb-sidenav-menu-nested nav">
+            <a class="nav-link" routerLink="/risco/risco-lst">Consultasss</a>
+            <a class="nav-link" routerLink="/risco/risco-lst">Cdastrooooo</a>
+          </nav>
+        </div>
+        <!--FIM PRODUTOS MENU-->
+
+        <!--INICIO VENDAS MENU-->
+        <a class="nav-link collapsed" href="#" data-toggle="collapse"
+           data-target="#collapsePages" aria-expanded="false"
+           aria-controls="collapsePages">
+
+           <div class="sb-nav-link-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          Configurações
+          <div class="sb-sidenav-collapse-arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </a>
+        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+             data-parent="#sidenavAccordion">
+          <nav class="sb-sidenav-menu-nested nav accordion"
+               id="sidenavAccordionPages">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse"
+              data-target="#pagesCollapseAuth" aria-expanded="false"
+              aria-controls="pagesCollapseAuth">
+              Authentication
+              <div class="sb-sidenav-collapse-arrow">
+                <i class="fas fa-angle-down"></i>
+              </div>
+            </a>
+            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                 data-parent="#sidenavAccordionPages">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" routerLink="/servico-prestado">
+                  Serviços Prestados
+                </a>
+                <a class="nav-link" routerLink="/servico-prestado/lista">
+                  Listagem Serviço
+                </a>
+                <a class="nav-link" routerLink="/servico-prestado/form">
+                  Listagem Serviço
+                </a>
+              </nav>
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse"
+              data-target="#pagesCollapseError" aria-expanded="false"
+              aria-controls="pagesCollapseError">
+              Error
+              <div class="sb-sidenav-collapse-arrow">
+                <i class="fas fa-angle-down"></i>
+              </div>
+            </a>
+            <div class="collapse" id="pagesCollapseError"aria-labelledby="headingOne"
+              data-parent="#sidenavAccordionPages">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="401.html">401 Page</a>
+                <a class="nav-link" href="404.html">404 Page</a>
+                <a class="nav-link" href="500.html">500 Page</a>
+              </nav>
+            </div>
+          </nav>
+        </div>
+        <!--FIM VENDAS MENU-->
+
+        <!-- <div class="sb-sidenav-menu-heading">Addons</div>
+                <a class="nav-link" href="charts.html">
+                  <div class="sb-nav-link-icon">
+                    <i class="fas fa-chart-area"></i>
+                  </div>
+                  Charts
+                </a>
+                <a class="nav-link" href="tables.html">
+                      <div class="sb-nav-link-icon">
+                        <i class="fas fa-table"></i>
+                      </div>
+                    Tables
+                </a>
+              </div> -->
+      </div>
+      <div class="sb-sidenav-menu-heading">Logout</div>
+      <a class="nav-link" (click)="logout()" href="#">
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-chart-area"></i>
+          Sair
+        </div>
+      </a>
+      <div class="sb-sidenav-footer">
+        <div class="small">Usuário Login:</div>
+        {{ usuarioLogado }}
+      </div>
+    </div>
+  </nav>
+</div>

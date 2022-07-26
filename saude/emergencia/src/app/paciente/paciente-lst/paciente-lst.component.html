@@ -1,0 +1,88 @@
+<h1 class="mt-2">Pacientes</h1>
+<div class="row">
+    <div class="col-md-6" *ngIf="valor ===  '1'">
+      <div class="form-group">
+        <label>cpf:</label>
+        <input name="cpf" mask="000.000.000-00" class="form-control" [(ngModel)]="cpf"/>
+      </div>
+    </div>
+    <div class="col-md-6" *ngIf="valor ===  '2'">
+      <div class="form-group">
+        <label>nome:</label>
+        <input name="nome" type="text" [(ngModel)]="nome" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-md-2">
+        <label for="idEstado" class="control-label" >Selecione</label>
+        <br>
+        <!-- <select class="form-control" id="idEstado" formControlName="idEstado" >
+            <option *ngFor="let estadolocal of lstEstadoAll" [value]="estadolocal.idEstado" >
+                {{ estadolocal.nome }}
+            </option>
+        </select> -->
+
+        <select class="form-control"  [(ngModel)]="valor">
+          <option selected>Selecione</option>
+          <option value="1">CPF</option>
+          <option value="2">Nome</option>
+        </select>
+
+    </div>
+    <div class="col-md-4" style="margin-top: 30px;">
+        <button style="margin-right: 10px;" type="button" class="btn btn-warning" (click)="getPacienteCpfNome()">
+          <i class="fa fa-search"></i>
+          Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary" (click)="novoPaciente()">
+          <i class="fa fa-plus"></i>
+          Novo
+        </button>
+    </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-hover">
+      <thead>
+        <th>ID</th>
+        <th>cpf</th>
+        <th>Nome</th>
+        <th>Nacimento</th>
+        <th>Ação</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paciente of pacientes">
+          <td>{{ paciente.idCliente }}</td>
+          <td>{{ paciente.nome }}</td>
+          <td>{{ paciente.dataNascimento }}</td>
+          <td>{{ cliente.cpf | cpf }}</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              title="Edita o Registro"
+              routerLink="/clientes/form/{{ paciente.idPaciente }}"
+            >
+              <i class="fa fa-edit"></i>
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="preparaDesativacao(paciente)"
+              data-bs-toggle="tooltip"
+              title="Desativa o Registro"
+            >
+              <i class="fa fa-trash"></i>
+            </button>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              title="Detalhe do Registro"
+            >
+              <i class="fa fa-info fa-lg" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
