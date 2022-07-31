@@ -1,0 +1,81 @@
+
+<h1 class="mt-4">Atendimento Médico</h1>
+<ol class="breadcrumb mb-10">
+    <li class="breadcrumb-item active">Paciente {{recepcaoDto.nome}}</li>
+</ol>
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-prescicao-tab" data-toggle="pill" href="#pills-prescricao"
+       role="tab" aria-controls="pills-home" aria-selected="true">Prescição</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-admissao-tab" data-toggle="pill" href="#pills-admissao"
+       role="tab" aria-controls="pills-profile" aria-selected="false"> Admissão </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-evolucao-tab" data-toggle="pill" href="#pills-evolucao"
+       role="tab" aria-controls="pills-profile" aria-selected="false"> Evolução </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-receituario-tab" data-toggle="pill" href="#pills-receituario"
+       role="tab" aria-controls="pills-contact" aria-selected="false"> Receituário </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-atestado-tab" data-toggle="pill" href="#pills-atestado"
+       role="tab" aria-controls="pills-contact" aria-selected="false"> Atestado </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-laboratorio-tab" data-toggle="pill" href="#pills-laboratorio"
+       role="tab" aria-controls="pills-contact" aria-selected="false"> Laboratório </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-imagem-tab" data-toggle="pill" href="#pills-imagem"
+       role="tab" aria-controls="pills-contact" aria-selected="false"> Imagem </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-cid10-tab" data-toggle="pill" href="#pills-cid10"
+       role="tab" aria-controls="pills-contact" aria-selected="false"> Cod10 </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-imagem-tab" data-toggle="pill" href="#pills-regulacao"
+       role="tab" aria-controls="pills-contact" aria-selected="false"> Regulação </a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-prescricao" role="tabpanel"
+       aria-labelledby="pills-home-tab">
+    <app-atestado-lst> </app-atestado-lst>
+  </div>
+  <div class="tab-pane fade" id="pills-admissao" role="tabpanel"
+       aria-labelledby="pills-profile-tab">
+    Admissao do paciente
+  </div>
+  <div class="tab-pane fade" id="pills-evolucao" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    Dados da Evolução
+  </div>
+  <div class="tab-pane fade" id="pills-receituario" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    Dados do receituario
+  </div>
+  <div class="tab-pane fade" id="pills-atestado" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    Atestado médico
+  </div>
+  <div class="tab-pane fade" id="pills-laboratorio" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    Exames Laboratorial
+  </div>
+  <div class="tab-pane fade" id="pills-imagem" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    Exame Imagem
+  </div>
+  <div class="tab-pane fade" id="pills-cid10" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    CID10
+  </div>
+  <div class="tab-pane fade" id="pills-regulacao" role="tabpanel"
+       aria-labelledby="pills-contact-tab">
+    Regulação
+  </div>
+</div>

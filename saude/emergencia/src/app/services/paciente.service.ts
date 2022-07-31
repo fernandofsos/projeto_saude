@@ -5,22 +5,34 @@ import { environment } from 'src/environments/environment';
 import { Paciente } from '../paciente/model/Paciente';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PacienteService {
+  private readonly API = environment.apiUrlBaseMock + '/paciente';
 
-  private readonly API = environment.apiUrlBase + '/paciente'  //  'http://localhost:3004/cliente';
+  constructor(private httpClient: HttpClient) {}
 
-  constructor( private httpClient: HttpClient) { }
+  listaPacientes(): Observable<Paciente[]> {
+    return this.httpClient.get<Paciente[]>(this.API+'/pacientes');
+  }
 
- listaPacientes(): Observable<Paciente[]> {
-    const tokenString = localStorage.getItem('access_token');
-    const token = JSON.parse(tokenString);
-    const headers = {
-      'Authorization' : 'Bearer ' + token.access_token
-    }
-    console.log('*********************************getListaClientes');
-    console.log(this.API);
-    return this.httpClient.get<Paciente[]>(this.API, {headers});
-}
+  desativarPaciente(): Observable<Paciente[]> {
+    return this.httpClient.get<Paciente[]>(this.API+'/pacientes');
+  }
+
+  novoPaciente():Observable<any[]> {
+    return this.httpClient.get<any[]>(this.API);
+  }
+
+
+  // listaPacientes(): Observable<Paciente[]> {
+  //   const tokenString = localStorage.getItem('access_token');
+  //   const token = JSON.parse(tokenString);
+  //   const headers = {
+  //     Authorization: 'Bearer ' + token.access_token,
+  //   };
+  //   console.log('*********************************getListaClientes');
+  //   console.log(this.API);
+  //   return this.httpClient.get<Paciente[]>(this.API, { headers });
+  // }
 }

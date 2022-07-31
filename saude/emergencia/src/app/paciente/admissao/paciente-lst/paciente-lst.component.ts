@@ -4,9 +4,12 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Estado } from 'src/app/model/estado';
 import { AlertModalComponent } from 'src/app/shared/alert-modal/alert-modal.component';
-import { Paciente } from '../model/Paciente';
+
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DadosModal } from 'src/app/shared/model/dados-modal';
+import { PacienteService } from 'src/app/services/paciente.service';
+import { ModalUtilService } from 'src/app/services/modal-util.service';
+import { Paciente } from '../../model/Paciente';
 
 @Component({
   selector: 'app-paciente-lst',
@@ -19,9 +22,9 @@ export class PacienteLstComponent implements OnInit {
   nome: string;
   bsModalRef:BsModalRef;
   pacientes: Paciente[] = [];
+  paciente: Paciente = new Paciente();
   pacienteSelecionado: Paciente;
   dados: DadosModal = new DadosModal();
-
 
  lstEstadoAll: Estado[] = [{
     idEstado: 1,
@@ -35,7 +38,9 @@ export class PacienteLstComponent implements OnInit {
   constructor(  private router: Router,
                 private formBuilder: FormBuilder ,
                 private modalService: BsModalService,
-                private activatedRoute: ActivatedRoute) { }
+                private activatedRoute: ActivatedRoute,
+                private modalUtilService: ModalUtilService,
+                private pacienteService: PacienteService ) { }
 
   ngOnInit(): void {
 
@@ -53,7 +58,7 @@ export class PacienteLstComponent implements OnInit {
         break;
       case '2':
 
-        if(this.cpf.length > 5){
+        if(this.nome.length > 5){
           this.getPacienteNome();
         } else {
           this.handleMessage('Digite o Nome do Pacinete', 'danger');
@@ -67,11 +72,66 @@ export class PacienteLstComponent implements OnInit {
   }
 
   getPacienteCpf(): void {
+    this.pacienteService.listaPacientes().subscribe(result =>  {
 
+      this.pacientes = result.map(r => ({
+        ...r, id: r.id
+      }))
+
+      ///modelo antigo
+      // let x = result.length;
+      // for (let i = 0; i < x; i++) {
+      //   this.paciente = {...result[i], idPaciente: result[i].id }
+      //   this.pacientes.push(this.paciente);
+      // }
+
+
+   }, error => {
+     console.log('retorno Erro getPacienteCpf service');
+     console.log(error.status);
+     console.log(error);
+     console.log(error.error.error_description);
+     console.log(error.message);
+     this.pacientes =  [];
+    })
   }
 
   getPacienteNome(): void {
 
+  }
+
+  novoPaciente(): void {
+    this.router.navigate(['pacientes/paciente-add']);
+  }
+
+  desativarPaciente(): void{
+    console.log("Esse metodo desativa o paciente");
+  }
+
+  admissaoPacienteByState(paciente: Paciente): void {
+    this.router.navigateByUrl('pacientes/paciente-add', { state: paciente })
+  }
+
+  preparaDesativacao(paciente: Paciente): void {
+    console.log("prepara Desativacao");
+    this.pacienteSelecionado = paciente;
+    console.log(this.pacienteSelecionado);
+    this.showModalConfirmaDesativar(`Deseja desativar ${this.pacienteSelecionado.nome} ?`)
+  }
+
+  showModalConfirmaDesativar(msg: string): void {
+    this.modalUtilService.showModalConfima('Desativar Paciente',msg )
+      .subscribe( result => {
+          console.log("retorno");
+          console.log(result);
+          console.log(result['Justificativa'] );
+          this.dados = result;
+          console.log(this.dados.Justificativa);
+          if(this.dados.confirmResult){
+            console.log('entrou no confirma resultado showModalConfirma')
+           /// this. desativarCliente();
+          }
+    })
   }
 
   handleMessage(msg: string , type: string): void {
@@ -79,47 +139,6 @@ export class PacienteLstComponent implements OnInit {
     this.bsModalRef.content.message = msg;
     this.bsModalRef.content.type = type;
   }
-
-  novoPaciente(): void {
-    this.router.navigate(['pacientes/paciente-add']);
-  }
-
-
-  preparaDesativacao(paciente: Paciente): void {
-    console.log("prepara delecao");
-    this.pacienteSelecionado = paciente;
-    console.log(this.pacienteSelecionado);
-  //this.showModalConfirmaDesativar(`Deseja desativar ${this.pacienteSelecionado.nome} ?`)
-  }
-
-
-  novoCadastro(): void {
-
-    console.log(this.valor);
-    console.log(this.nome);
-    console.log(this.cpf);
-    //this.router.navigate(['/clientes/form']);
-  }
-
-  deletarCliente(): void{
-    console.log("deletarCliente");
-  }
-
-  // showModalConfirmaDesativar(msg: string): void {
-  //   this.modalUtilService.showModalConfima('Desativar Cliente',msg )
-  //     .subscribe( result => {
-  //         console.log("retorno");
-  //         console.log(result);
-  //         console.log(result['Justificativa'] );
-  //         this.dados = result;
-  //         console.log(this.dados.Justificativa);
-  //         if(this.dados.confirmResult){
-  //           console.log('entrou no confirma resultado showModalConfirma')
-  //           this. desativarCliente();
-  //         }
-  //   })
-  // }
-
 
   // desativarCliente(): void {
   //   this.clientesService.desativarCliente(this.clienteSelecionado)
@@ -133,10 +152,6 @@ export class PacienteLstComponent implements OnInit {
   //       });
   // }
 
-  // handleMessage(msg: string , type: string): void {
-  //   //this.bsModalRef = this.modalService.show(AlertModalComponent);
-  //   this.bsModalRef.content.message = msg;
-  //   this.bsModalRef.content.type = type;
-  // }
+
 
 }

@@ -1,4 +1,4 @@
-<h1 class="mt-2">Classificação de Risco</h1>
+<h1 class="mt-2">Atendimento Médico</h1>
 <br />
 <div class="row">
   <div class="col-md-12">
@@ -27,7 +27,7 @@
               class="btn btn-primary"
               data-bs-toggle="tooltip"
               title="Classificação de risco"
-              routerLink="/clientes/form/{{ recepcao.idEntrada }}" >
+              (click)="admissaoPacienteByState(recepcao)" >
               <i class="fas fa-book-medical fa-lg"></i>
             </button>
           </td>
@@ -36,3 +36,4 @@
     </table>
   </div>
 </div>
+

@@ -44,41 +44,47 @@
   <div class="col-md-12">
     <table class="table table-condensed table-hover">
       <thead>
-        <th>ID</th>
+        <th>Prontuário</th>
         <th>cpf</th>
         <th>Nome</th>
+        <th>Nome Social</th>
         <th>Nacimento</th>
+        <th>Celular</th>
         <th>Ação</th>
       </thead>
       <tbody>
         <tr *ngFor="let paciente of pacientes">
-          <td>{{ paciente.idCliente }}</td>
+          <td>{{ paciente.prontuario }}</td>
+          <td>{{ paciente.cpf }}</td>
           <td>{{ paciente.nome }}</td>
+          <td>{{ paciente.nomeSocial }}</td>
           <td>{{ paciente.dataNascimento }}</td>
-          <td>{{ cliente.cpf | cpf }}</td>
+          <td>{{ paciente.celular }}</td>
           <td>
-            <button
-              class="btn btn-primary"
+            <button class="btn btn-primary"
               data-bs-toggle="tooltip"
-              title="Edita o Registro"
-              routerLink="/clientes/form/{{ paciente.idPaciente }}"
-            >
-              <i class="fa fa-edit"></i>
+              title="Admissão do paciente na emeregencia"
+              (click)="admissaoPacienteByState(paciente)" >
+              <i class="fas fa-clinic-medical" aria-hidden="true"></i>
             </button>
-            <button
-              class="btn btn-danger"
+            <!-- <button class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              title="Admissão do paciente na emeregencia"
+              routerLink="/pacientes/paciente/{{ paciente.idPaciente }}" >
+              <i class="fas fa-clinic-medical" aria-hidden="true"></i>
+            </button> -->
+
+            <button class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              title="Edita o cadastro do paciente" >
+              <i class="fa fa-edit"aria-hidden="true"></i>
+            </button>
+
+            <button class="btn btn-danger"
               (click)="preparaDesativacao(paciente)"
               data-bs-toggle="tooltip"
-              title="Desativa o Registro"
-            >
-              <i class="fa fa-trash"></i>
-            </button>
-            <button
-              class="btn btn-primary"
-              data-bs-toggle="tooltip"
-              title="Detalhe do Registro"
-            >
-              <i class="fa fa-info fa-lg" aria-hidden="true"></i>
+              title="Desativa o Registro" >
+              <i class="fa fa-trash" aria-hidden="true"> </i>
             </button>
           </td>
         </tr>

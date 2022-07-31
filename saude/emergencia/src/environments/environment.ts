@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrlBaseMock: 'http://localhost:3004',
+  apiUrlBaseMock: 'http://localhost:3000',
   apiUrlBase: 'http://localhost:8090/backendpedido',
   clientId: 'api-pedido',
   clientSecret:'@123',

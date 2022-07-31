@@ -1,7 +1,7 @@
 <h1 class="mt-4">Paciente</h1>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">
-    {{ paciente.idPaciente ? "Edição" : "Cadastro" }}
+    {{ paciente.id ? "Edição" : "Cadastro" }}
   </li>
 </ol>
 
@@ -120,11 +120,11 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <button class="btn btn-success" type="submit" *ngIf="paciente.idPaciente == undefined || paciente.idPaciente == 0 ">
+        <button class="btn btn-success" type="submit" *ngIf="paciente.id == undefined || paciente.id == 0 ">
           <i class="fa fa-save"></i>
           Salvar
         </button>
-        <button class="btn btn-success" type="submit" *ngIf="paciente.idPaciente  !== undefined || paciente.idPaciente == 0 ">
+        <button class="btn btn-success" type="submit" *ngIf="paciente.id  !== undefined || paciente.id == 0 ">
           <i class="fa fa-save"></i>
           Alterar
         </button>

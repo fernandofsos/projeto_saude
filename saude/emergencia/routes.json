@@ -1,0 +1,5 @@
+{
+  "/paciente/pacientes": "/pacientes",
+  "/risco/recepcao":"/recepcao",
+  "/medico/recepcao":"/recepcaomedica"
+}

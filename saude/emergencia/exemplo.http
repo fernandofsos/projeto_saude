@@ -1,35 +1,60 @@
-GET http://localhost:3004/cliente
+GET http://localhost:3000/cliente
 content-type: application/json
 
 ###
-GET http://localhost:3004/cliente/1
+GET http://localhost:3000/cliente/1
+content-type: application/json
+
+################################Paciente#############################
+####
+GET http://localhost:3000/paciente/pacientes
+content-type: application/json
+
+####
+GET http://localhost:3000/pacientes/1
 content-type: application/json
 
 ###
-POST  http://localhost:3004/cliente HTTP/1.1
+POST  http://localhost:3000/pacientes
 content-type: application/json
 
-{
-    "nome": "JOAO BATISTA DE SOUSA NETO",
-    "cpf": "55531440359",
-    "dataCadastro": "01/01/2021 08:50:00"
-}
-
+  {
+      "prontuario": "1010",
+      "cpf": "24224224224",
+      "cns": "123456789",
+      "nome": "ANDRE BALDE DA SILVA SAURO",
+      "nomeSocial": "BALDINHO",
+      "dataNascimento": "02/07/1974",
+      "mae": "NAO SEI O NOME",
+      "telefone":"85992312094",
+      "celular": "85992312094",
+      "email":"balde.mais@gmail.com"
+  }
 ###
-PUT  http://localhost:3004/cliente/2 HTTP/1.1
+PUT  http://localhost:3000/pacientes/4
 content-type: application/json
 
-{
-    "nome": "JOAO GABRIEL",
-    "cpf": "55531440359",
-    "dataCadastro": "01/01/2021 08:50:00"
-}
+  {
+      "prontuario": "1010",
+      "cpf": "24224224224",
+      "cns": "123456789",
+      "nome": "ANDRE BALDE DA SILVA SAURO",
+      "nomeSocial": "BALDINHO",
+      "dataNascimento": "02/07/1974",
+      "mae": "NAO SEI O NOME",
+      "telefone":"85992312094",
+      "celular": "85992312094",
+      "email":"balde.mais.balde@gmail.com"
+  }
 
-###
-DELETE http://localhost:3004/cliente/3
-Content-Type: application/json
+
+################################Risco#############################
+####
+GET http://localhost:3000/risco/recepcao
+content-type: application/json
 
 
-###
-GET http://localhost:3004/servicoPrestado?descricao=dddddd&mes=02
-Content-Type: application/json
+################################Medico#############################
+####
+GET http://localhost:3000/medico/recepcao
+content-type: application/json

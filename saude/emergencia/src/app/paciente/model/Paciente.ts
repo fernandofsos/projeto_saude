@@ -1,6 +1,5 @@
 export class Paciente {
-
-  idPaciente?:number;
+  id?:number;
   prontuario: string;
   cpf: string;
   cns: string;
@@ -9,6 +8,7 @@ export class Paciente {
   dataNascimento: string;
   mae: string;
   telefone?: string;
+  sexo: string;
   celular?: string;
   email?:string;
 }

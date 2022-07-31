@@ -24,6 +24,7 @@ import { AuthService } from './services/auth.service';
 import { FornecedorService } from './services/fornecedor.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMaskModule,IConfig } from 'ngx-mask';
+import { PacienteService } from './services/paciente.service';
 
 
 @NgModule({
